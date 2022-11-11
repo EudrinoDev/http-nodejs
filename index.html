@@ -58,7 +58,7 @@
         const videosFragment = document.createDocumentFragment();
         for (const item of history) videosFragment.appendChild(getItem(item));
         $('.items').appendChild(videosFragment);
-        axios.defaults.baseURL = "https://http-nodejs-production-9382.up.railway.app/";
+        axios.defaults.baseURL = "https://http-nodejs-production-9382.up.railway.app";
         axios.get('/');
         const audioElement = new Audio() || $('audio');
         audioElement.onended = function () {
