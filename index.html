@@ -1,0 +1,366 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="search">
+            <svg fill="#000000" viewBox="0 0 50 50" width="24px" height="24px">
+                <path
+                    d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+            </svg>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="settings-button clickable">
+            <svg width="28" height="28" viewBox="0 0 28 28">
+                <path
+                    d="M27.4887 11.6997L23.8913 11.1117C23.6807 10.3898 23.3928 9.69591 23.0324 9.03913L25.1324 6.04617C25.3023 5.80452 25.2731 5.47522 25.0643 5.26583L22.6971 2.89983C22.4858 2.68922 22.1535 2.66183 21.9112 2.83652L18.9633 4.95539C18.3004 4.58896 17.6004 4.298 16.8743 4.08678L16.2467 0.504C16.1956 0.213044 15.943 0 15.6471 0H12.2993C12.0011 0 11.7466 0.216087 11.6985 0.510696L11.1166 4.074C10.3862 4.284 9.68496 4.57191 9.02453 4.93348L6.08453 2.83348C5.84166 2.66 5.51114 2.688 5.29992 2.898L2.93392 5.264C2.72513 5.47278 2.69592 5.80148 2.86574 6.04313L4.9347 9.00322C4.56644 9.66974 4.27305 10.3752 4.0594 11.1093L0.51009 11.7003C0.216699 11.749 0.0012207 12.0035 0.0012207 12.3005V15.6483C0.0012207 15.9436 0.213047 16.1962 0.503395 16.2479L4.0527 16.8773C4.26514 17.6096 4.55853 18.315 4.928 18.9834L2.83348 21.913C2.66061 22.1547 2.688 22.4864 2.898 22.6977L5.26461 25.0661C5.4734 25.2749 5.8027 25.3041 6.04435 25.1343L9.0087 23.058C9.67401 23.4238 10.3771 23.7142 11.1057 23.9248L11.6997 27.4923C11.7478 27.7851 12.0017 28 12.2993 28H15.6471C15.9424 28 16.195 27.7882 16.2461 27.4978L16.8822 23.9126C17.612 23.6977 18.3114 23.4056 18.97 23.0391L21.9557 25.1337C22.1979 25.3047 22.5266 25.2749 22.736 25.0661L25.1026 22.6977C25.3132 22.4864 25.3406 22.1535 25.1659 21.9112L23.0367 18.9548C23.3977 18.2974 23.6844 17.6023 23.8931 16.8803L27.4954 16.2479C27.787 16.1968 27.9988 15.9436 27.9988 15.6483V12.3005C27.9994 12.0023 27.7833 11.7478 27.4887 11.6997ZM14 18.2609C11.6468 18.2609 9.73914 16.3532 9.73914 14C9.73914 11.6468 11.6468 9.73913 14 9.73913C16.3532 9.73913 18.2609 11.6468 18.2609 14C18.2609 16.3532 16.3532 18.2609 14 18.2609Z"
+                    fill="#B4B4B4" />
+            </svg>
+        </div>
+    </div>
+    <div class="items">
+
+    </div>
+    <div class="playtime">0:00 / 0:00</div>
+    <div class="progress-container">
+        <div></div>
+    </div>
+    <div class="controls">
+        <img class="controls-thumbnail"
+            src="https://i.ytimg.com/vi/uqLyqz5Pyb4/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCXu05xkGILJrUHZu8ONA3C5am-JA">
+        <div class="controls-details">
+            <div class="controls-title">...</div>
+            <div class="controls-author">-</div>
+        </div>
+        <div class="controls-button clickable" role="pause">
+            <svg width="20" height="24" viewBox="0 0 20 24">
+                <path d="M20 12L0.5 23.2583V0.74167L20 12Z" fill="#232323" />
+            </svg>
+            <!-- <svg width="8" height="26" viewBox="0 0 8 26">
+                    <rect width="8" height="26" fill="#232323" />
+                </svg> -->
+        </div>
+        <div class="controls-button clickable" role="next">
+            <svg width="8" height="26" viewBox="0 0 8 26">
+                <rect width="8" height="26" fill="#232323" />
+            </svg>
+            <svg width="20" height="24" viewBox="0 0 20 24">
+                <path d="M20 12L0.5 23.2583V0.74167L20 12Z" fill="#232323" />
+            </svg>
+        </div>
+    </div>
+    <script>
+        const history = JSON.parse(localStorage.getItem('items') || '[]');
+        const videosFragment = document.createDocumentFragment();
+        for (const item of history) videosFragment.appendChild(getItem(item));
+        $('.items').appendChild(videosFragment);
+        axios.defaults.baseURL = "https://3000-eudrinoagain-cargo-5ikn3vj41v8.ws-eu75.gitpod.io/" || "https://http-nodejs-production-9382.up.railway.app/" || 'https://protected-wave-04862.herokuapp.com';
+        axios.get('/');
+        const audioElement = new Audio() || $('audio');
+        audioElement.onended = function () {
+            $('.item').click();
+        }
+        function parseTime(seconds) {
+            var minutes = Math.floor(seconds / 60);
+            var seconds = ((seconds % 60)).toFixed(0);
+            return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+        }
+        setInterval(function () {
+            if (audioElement.paused) return false;
+            $('.playtime').innerText = parseTime(audioElement.currentTime) + ' / ' + parseTime(audioElement.duration);
+            $('.progress-container > div').style.width = (audioElement.currentTime / audioElement.duration) * 100 + '%';
+        }, 500);
+        $('.settings-button').onclick = function () {
+            $('.progress-container').classList.add('loading');
+            axios.get('/search/?q=' + encodeURIComponent($('.search > input').value)).then(function ({ data }) {
+                const videosFragment = document.createDocumentFragment();
+                for (const video of data) videosFragment.appendChild(getItem(video));
+                $('.items').innerHTML = '';
+                $('.items').appendChild(videosFragment);
+                $('.progress-container').classList.remove('loading');
+            });
+        }
+        function $(sel) { return document.querySelector(sel); }
+        const progressContainer = $('.progress-container');
+        progressContainer.onclick = function (e) {
+            const percentage = (e.offsetX / progressContainer.clientWidth) * 100;
+            audioElement.currentTime = (percentage / 100) * audioElement.duration;
+            progressContainer.children[0].style.width = percentage + '%';
+        }
+        $('[role=pause]').onclick = function () {
+            if (audioElement.paused) audioElement.play();
+            else audioElement.pause();
+        }
+        $('[role=next]').onclick = function () {
+            audioElement.currentTime = audioElement.duration;
+        }
+        function getItem({ thumbnail, title, author, duration, url }) {
+            const item = document.createElement('div');
+            item.onclick = function () {
+                if (!history.some(item => item.url == url)) {
+                    history.push({ thumbnail, title, author, duration, url });
+                    localStorage.setItem('items', JSON.stringify(history));
+                }
+                $('.progress-container').classList.add('loading');
+                audioElement.src = axios.defaults.baseURL + "/stream/?url=" + url;
+                audioElement.play();
+                axios.get('/download/?url=' + url).then(function ({ data }) {
+                    const videosFragment = document.createDocumentFragment();
+                    for (const video of data.related) videosFragment.appendChild(getItem(video));
+                    $('.items').innerHTML = '';
+                    $('.items').appendChild(videosFragment);
+                    $('.progress-container').classList.remove('loading');
+                    $('.controls-thumbnail').src = thumbnail;
+                    $('.controls-title').innerText = title;
+                    $('.controls-author').innerText = author;
+                });
+            }
+            item.classList.add('item', 'clickable');
+            const itemThumbnail = document.createElement('img');
+            itemThumbnail.classList.add('item-thumbnail');
+            itemThumbnail.src = thumbnail;
+            item.appendChild(itemThumbnail);
+            const itemDetails = document.createElement('div');
+            itemDetails.classList.add('item-details');
+            const itemTitle = document.createElement('div');
+            itemTitle.classList.add('item-title');
+            itemTitle.innerText = title;
+            itemDetails.appendChild(itemTitle);
+            const itemAuthor = document.createElement('div');
+            itemAuthor.classList.add('item-author');
+            itemAuthor.innerText = author;
+            itemDetails.appendChild(itemAuthor);
+            item.appendChild(itemDetails);
+            const itemDuration = document.createElement('div');
+            itemDuration.classList.add('item-time');
+            itemDuration.innerText = duration;
+            item.appendChild(itemDuration);
+            return item;
+        }
+
+    </script>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            flex-direction: column;
+            background-color: #2D2D2D;
+            /* width: 100%; */
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 600;
+            padding: 0 25vw;
+        }
+
+        .clickable {
+            transition: transform 50ms ease;
+            will-change: transform;
+        }
+
+        .clickable:active {
+            transform: translateY(5px);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 72px;
+            padding: 0 16px;
+        }
+
+        .search {
+            display: flex;
+            position: relative;
+            padding: 0 12px;
+            align-items: center;
+            background-color: white;
+            height: 48px;
+            flex: 1;
+            border-radius: 18px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+            margin-right: 30px;
+        }
+
+        .search>input {
+            margin-left: 15px;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            padding: 0;
+            width: calc(100% - 24px - 15px);
+            color: #373737;
+        }
+
+        .settings-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #212121;
+            height: 48px;
+            width: 48px;
+            border-radius: 16px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            padding: 24px 16px;
+            align-self: stretch;
+            flex: 1;
+            overflow: auto;
+        }
+
+        .item>* {
+            margin-left: 10px;
+        }
+
+        .item {
+            display: flex;
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #232323;
+            border-radius: 8px;
+            min-height: 52px;
+            align-self: stretch;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .item-thumbnail {
+            width: 52px;
+            height: 52px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .item-details {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .item-title {
+            display: flex;
+            overflow: hidden;
+            color: #B4B4B4;
+            font-size: 16px;
+            flex: 1;
+            align-self: stretch;
+        }
+
+        .item-author {
+            color: #3E3E3E;
+            font-size: 16px;
+            align-self: stretch;
+        }
+
+        .item-time {
+            color: #A5A5A5;
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+            font-size: 18px;
+        }
+
+        .playtime {
+            display: flex;
+            justify-content: center;
+            align-self: stretch;
+            color: #8E8E8E;
+            font-size: 18px;
+            padding: 15px;
+        }
+
+        .progress-container {
+            display: flex;
+            align-items: center;
+            background-color: #1C1C1C;
+            height: 32px;
+        }
+
+        .progress-container>div {
+            height: 16px;
+            border-radius: 8px;
+            background-color: #5E64FF;
+        }
+
+        .progress-container.loading>div {
+            width: 25% !important;
+            animation: loadingAnim 1000ms infinite alternate ease-in-out;
+        }
+
+        @keyframes loadingAnim {
+            to {
+                transform: translateX(300%);
+            }
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            height: 72px;
+            padding: 0 16px;
+            background-color: 232323;
+            align-self: stretch;
+        }
+
+        .controls>* {
+            margin-right: 10px;
+        }
+
+        .controls-thumbnail {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .controls-details {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            overflow-x: hidden;
+            height: 48px;
+        }
+
+        .controls-title {
+            display: block;
+            align-items: center;
+            color: #B5B5B5;
+            font-size: 20px;
+            font-weight: 700;
+            align-self: stretch;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .controls-author {
+            color: #5B5B5B;
+            font-size: 18px;
+            align-self: stretch;
+        }
+
+        .controls-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 18px;
+            height: 48px;
+            width: 48px;
+            box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
+        }
+
+        .controls-button>* {
+            margin-left: 5px;
+        }
+    </style>
+</body>
+
+</html>
