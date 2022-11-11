@@ -16,7 +16,8 @@ express ()
 })
 .get ('/download/:url', async ({ params }, response) => {
     const itemInfo = await ytdl.getInfo (params.url, {
-        lang: 'ar'
+        lang: 'ar',
+        requestOptions: { headers: { cookie: process.env.COOKIE }}
     });
     response.json ({
         stream: itemInfo.formats.filter (b => b.hasAudio).sort ((a, b) => b.audioBitrate - a.audioBitrate)[0].url,
