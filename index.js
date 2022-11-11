@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import ytdl from "ytdl-core";
+import ytdl from "ytdl";
 import requestPromise from "request-promise";
 import prettyMs from "pretty-ms";
 express ()
